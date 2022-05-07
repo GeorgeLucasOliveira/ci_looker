@@ -3,7 +3,7 @@ view: view_name {
 
    dimension: example {
     type: string
-    description: ""
+    description: "Dimension example"
     sql: ${TABLE}.column ;;
   }
 }
