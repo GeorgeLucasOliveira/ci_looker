@@ -28,6 +28,9 @@ def test_descriptions_in_dimensions():
             if dimensions_with_errors:
                 errors.append({'file_path': file_path, 'dimensions': dimensions_with_errors})
                 
+    if len(errors) > 0:
+        assert False, build_error_msg(errors, dimensions_with_errors)
+                
 def build_error_msg(errors, itens_errors):
     error_msg = ""
     error_msg += "\n ----------------------------- OUTPUT --------------------------\n"
@@ -41,9 +44,13 @@ def build_error_msg(errors, itens_errors):
     return error_msg
     
 def changed_files():
-    if ',' in os.getenv('CHANGED_FILES'):
-        files = os.getenv('CHANGED_FILES').strip('][').split(',')
-    else:
-        files = os.getenv('CHANGED_FILES').strip('][').split()
-        
+    #if ',' in os.getenv('CHANGED_FILES'):
+        #files = os.getenv('CHANGED_FILES').strip('][').split(',')
+    #else:
+        #files = os.getenv('CHANGED_FILES').strip('][').split()
+    files = ['views/view_name.view.lkml']
     return files
+
+
+if __name__ == "__main__":
+    test_descriptions_in_dimensions()
