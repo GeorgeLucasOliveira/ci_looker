@@ -1,27 +1,19 @@
 # ci_looker
 
-Vantagens:<br>
--Mantém um padrão mínimo de qualidade da criação das models e views <br>
--Mitiga falhas<br>
--Garante que todas as métricas e dimensões terão description<br>
--Enriquece o dicionário da sua instância do Looker<br>
+Steps:
+1) Inside rep, click in Actions tab
+2) Click "New workflow"
+3) Click "set up a workflow yourself"
+4) Set workflow name, in this rep case, Yruka (Naruto <3)
+5) Copy content of yaml file (path: /.github/workflows/iruka.yml) and past in new workflow
+6) Finish the new workflow
+7) Copy the file in path "tests/test_files.py"
 
-Tutorial de implementação dos testes automatizados:
-1) Dentro do repositório, clique na aba superior "Actions"
-2) Clique no botão "New workflow"
-3) Clique em "set up a workflow yourself"
-4) De um nome para o worflow, no caso desse repositório, Yruka (Naruto <3)
-5) Copie o conteúdo do yml que está nesse repositório no caminho -> /.github/workflows/iruka.yml e cole no novo workflow
-6) Commite o novo workflow
-7) Crie uma pasta no diretório chamada "tests" e dentro dela um arquivo chamado "test_files.py" (nele conterá os testes que as views e models serão submetidas)
-
-
-Quando o build falha
 ![alt text](https://github.com/GeorgeLucasOliveira/ci_looker/blob/production/images_readme/open%20pull%20request%20failed.jpg)
+Build failed
 
-No workflow temos os detalhes do erro
 ![alt text](https://github.com/GeorgeLucasOliveira/ci_looker/blob/production/images_readme/test_failed.jpg)
+In workflow we have details
 
-
-Dica: bloqueie a abertura da pull request quando o arquivo falhar
+Tips: block open pull request when build fail
 ![alt text](https://github.com/GeorgeLucasOliveira/ci_looker/blob/production/images_readme/block%20if%20not%20build.jpg)
