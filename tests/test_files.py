@@ -17,12 +17,12 @@ def test_descriptions_in_dimensions():
             dimensions_with_errors = []
             if('dimensions' in lkml_file):
                 for dimension in lkml_file['dimensions']:
-                    if 'description' not in dimension or len(dimension['description']) > 0:
+                    if 'description' not in dimension or len(dimension['description']) == 0:
                         dimensions_with_errors.append(dimension['name'])
               
             if('dimension_groups' in lkml_file):
                 for dimension in lkml_file['dimension_groups']:
-                    if 'description' not in dimension or len(dimension['description']) > 0:
+                    if 'description' not in dimension or len(dimension['description']) == 0:
                         dimensions_with_errors.append(dimension['name'])
                     
             if dimensions_with_errors:
