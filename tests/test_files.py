@@ -28,6 +28,9 @@ def test_descriptions_in_dimensions():
             if dimensions_with_errors:
                 errors.append({'file_path': file_path, 'dimensions': dimensions_with_errors})
                 
+    if len(errors) > 0:
+        assert False, build_error_msg(errors, dimensions_with_errors)
+                
 def build_error_msg(errors, itens_errors):
     error_msg = ""
     error_msg += "\n ----------------------------- OUTPUT --------------------------\n"
